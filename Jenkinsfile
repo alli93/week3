@@ -24,8 +24,10 @@ node {
     }
     stage('job') {
     sh 'npm run 'startserver
-    sh 'npm run startclient'
-    sh 'sleep 10'
+    dir ('client') 
+    {
+        sh 'npm run start
+    }
     sh 'npm run apitest'
     sh 'npm run loadtest'
     }
