@@ -23,9 +23,13 @@ node {
         }
     }
     stage('job') {
-    sh 'npm run 'startserver
+    sh 'npm install -g nodemon'
+    sh 'npm install -g create-react-app'
+    sh 'npm run startpostgres && sleep 10 && npm run migratedb'
+    sh 'npm run 'startserver'
     dir ('client') 
     {
+        sh 'npm install'
         sh 'npm run start'
     }
     sh 'npm run apitest'
