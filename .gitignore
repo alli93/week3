@@ -5,4 +5,4 @@
 /.idea/
 todo.md
 *.pem
-/server/jasmine-report/*
+./server/jasmine-reports/*

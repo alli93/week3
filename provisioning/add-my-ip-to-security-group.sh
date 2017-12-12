@@ -4,6 +4,7 @@
 
 MY_PUBLIC_IP=$(curl http://checkip.amazonaws.com)
 
+echo ${MY_PUBLIC_IP}
 MY_CIDR=${MY_PUBLIC_IP}/32
 
 echo Using CIDR ${MY_CIDR} for access restrictions.

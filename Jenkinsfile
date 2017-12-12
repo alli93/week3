@@ -22,4 +22,11 @@ node {
             sh "./provision-new-environment.sh"
         }
     }
+    stage('job') {
+    sh 'npm run 'startserver
+    sh 'npm run startclient'
+    sh 'sleep 10'
+    sh 'npm run apitest'
+    sh 'npm run loadtest'
+    }
 }
