@@ -26,7 +26,7 @@ node {
     sh 'npm run 'startserver
     dir ('client') 
     {
-        sh 'npm run start
+        sh 'npm run start'
     }
     sh 'npm run apitest'
     sh 'npm run loadtest'
