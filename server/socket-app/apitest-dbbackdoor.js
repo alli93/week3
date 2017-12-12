@@ -47,10 +47,12 @@ module.exports=function(injected){
     };
 
     commandRouter.on('cleanDatabase', function(commandObj){
+        console.log("Database backdoor received cleanDatabase message");
         repo.cleanDatabase(commandObj, function(err){
             eventRouter.routeMessage({type:"databaseCleanError", err:err});
             console.error('Error clearing database tables: ' + err)
         }, function(){
+            console.log("Routing databaseCleaned to event router from database backdoor")
             eventRouter.routeMessage({type:"databaseCleaned"});
         })
     });

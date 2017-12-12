@@ -41,6 +41,7 @@ module.exports=function(injected){
             // Result is a list of modules/functions in this source code which get invoked when cleanDatabase is called.
             cleanDatabase:()=>{
                 let cmdId = commandId++;
+                console.log("Routing cleanDatabase command through command router from test api");
                 routingContext.commandRouter.routeMessage({commandId:cmdId, type:"cleanDatabase"});
                 return me;
 
@@ -48,6 +49,7 @@ module.exports=function(injected){
             waitForCleanDatabase:(whenClean)=>{
                 waitingFor.push("expectDatabaseCleaned");
                 routingContext.eventRouter.on('databaseCleaned', function(chatMessage){
+                    console.log("test api received databaseCleaned event")
                     waitingFor.pop(); // expectDatabaseCleaned
                     whenClean && whenClean();
                 });
