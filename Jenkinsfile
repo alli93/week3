@@ -23,8 +23,8 @@ node {
         }
     }
     stage('job') {
-    sh 'npm install -g nodemon'
-    sh 'npm install -g create-react-app'
+    sh 'sudo npm install -g nodemon'
+    sh 'sudo npm install -g create-react-app'
     sh 'npm run startpostgres && sleep 10 && npm run migratedb'
     sh 'npm run startserver'
     dir ('client') 
