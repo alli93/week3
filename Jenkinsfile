@@ -16,14 +16,13 @@ node {
             sh 'yarn install || npm install'
         }
         sh 'npm run startpostgres && sleep 10 && npm run migratedb:dev'
-        sh './dockerbuild.sh'
     }
     stage('Test') {
         sh 'npm run test:nowatch'
         sh 'npm run startserver & npm run apitest:nowatch && npm run loadtest:nowatch'
     }
     stage('Deploy') {
-        //sh './dockerbuild.sh'
+        sh './dockerbuild.sh'
         dir('./provisioning')
         {
             sh "./provision-new-environment.sh"
