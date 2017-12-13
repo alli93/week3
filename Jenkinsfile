@@ -16,7 +16,6 @@ node {
         sh './dockerbuild.sh'
         dir('./provisioning') 
         {
-
             sh './docker-compose-test.sh'
         }
     }
