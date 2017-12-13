@@ -23,7 +23,7 @@ describe("Tictactoe board", function () {
     });
 
     it('should render without error', function () {
-
+        TictactoeBoard.render();
     });
 
     it('should render 9 cells',function(){
