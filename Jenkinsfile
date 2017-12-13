@@ -11,7 +11,7 @@ node {
         {
             sh 'yarn install || npm install'
         }
-        sh 'npm run startpostgres && sleep 10 && npm run migratedb'
+        sh 'npm run startpostgres && sleep 10 && npm run migratedb:dev'
         sh './dockerbuild'
         dir('./provisioning') 
         {
