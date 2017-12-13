@@ -12,15 +12,19 @@ node {
             sh 'yarn install || npm install'
         }
         sh 'npm run startpostgres && sleep 10 && npm run migratedb'
-        sh ''
+        sh './dockerbuild'
+        dir('./provisioning') 
+        {
+            sh '/user/local/bin/docker-compose up -d --no-recreate'
+        }
     }
     stage('Test') {
         sh 'npm run test:nowatch'
-        sh 'npm run apitest'
-        sh 'npm run loadtest'
+        sh 'npm run apitest:nowatch'
+        sh 'npm run loadtest:nowatch'
     }
     stage('Deploy') {
-        sh './dockerbuild.sh'
+        //sh './dockerbuild.sh'
         dir('./provisioning')
         {
             sh "./provision-new-environment.sh"
