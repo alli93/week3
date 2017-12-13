@@ -10,6 +10,7 @@ sudo yum -y install java-1.8.0
 
 sudo yum -y install docker
 sudo yum -y install git
+sudo pip install docker-compose
 
 sudo service docker start
 sudo usermod -a -G docker ec2-user
@@ -17,6 +18,7 @@ sudo usermod -a -G docker ec2-user
 curl --silent --location https://rpm.nodesource.com/setup_9.x | sudo bash -
 sudo yum -y install nodejs
 sudo yum -y install gcc-c++ make
+
 
 sudo yum install jenkins -y
 sudo usermod -a -G docker jenkins
