@@ -11,9 +11,13 @@ node {
         {
             sh 'yarn install || npm install'
         }
+        sh 'npm run startpostgres && sleep 10 && npm run migratedb'
+        sh ''
     }
     stage('Test') {
         sh 'npm run test:nowatch'
+        sh 'npm run apitest'
+        sh 'npm run loadtest'
     }
     stage('Deploy') {
         sh './dockerbuild.sh'
@@ -21,18 +25,5 @@ node {
         {
             sh "./provision-new-environment.sh"
         }
-    }
-    stage('job') {
-    sh 'sudo npm install -g nodemon'
-    sh 'sudo npm install -g create-react-app'
-    sh 'npm run startpostgres && sleep 10 && npm run migratedb'
-    sh 'npm run startserver'
-    dir ('client') 
-    {
-        sh 'npm install'
-        sh 'npm run start'
-    }
-    sh 'npm run apitest'
-    sh 'npm run loadtest'
     }
 }
