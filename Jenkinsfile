@@ -12,7 +12,7 @@ node {
             sh 'yarn install || npm install'
         }
         sh 'npm run startpostgres && sleep 10 && npm run migratedb:dev'
-        sh './dockerbuild'
+        sh './dockerbuild.sh'
         dir('./provisioning') 
         {
             sh '/user/local/bin/docker-compose up -d --no-recreate'
