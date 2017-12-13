@@ -15,7 +15,7 @@ node {
         sh './dockerbuild.sh'
         dir('./provisioning') 
         {
-            sh '/user/local/bin/docker-compose up -d --no-recreate'
+            sh '/usr/local/bin/docker-compose up -d --no-recreate'
         }
     }
     stage('Test') {
