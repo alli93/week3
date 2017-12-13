@@ -3,7 +3,10 @@ node {
     stage('Clean') {
         // Clean files from last build.
         sh 'git clean -dfxq'
-        sh 'kill-containers.sh'
+        dir('./provisioning')
+        {
+            sh './kill-containers.sh'
+        }
     }
     stage('Setup') {
         // Prefer yarn over npm.
