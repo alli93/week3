@@ -5,7 +5,7 @@ node {
         sh 'git clean -dfxq'
         dir('./provisioning')
         {
-            sh './kill-containers.sh'
+            //sh './kill-containers.sh'
         }
     }
     stage('Setup') {
