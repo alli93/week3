@@ -23,7 +23,7 @@ describe("Tictactoe board", function () {
     });
 
     it('should render without error', function () {
-        expect(TictactoeBoard.render().div.find('TictactoeBoard'))
+        TictactoeBoard.render();
     });
 
     it('should render 9 cells',function(){
