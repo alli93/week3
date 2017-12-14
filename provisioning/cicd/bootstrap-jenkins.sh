@@ -15,7 +15,7 @@ sudo pip install docker-compose
 sudo service docker start
 sudo usermod -a -G docker ec2-user
 
-curl --silent --location https://rpm.nodesource.com/setup_9.x | sudo bash -
+curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
 sudo yum -y install nodejs
 sudo yum -y install gcc-c++ make
 
