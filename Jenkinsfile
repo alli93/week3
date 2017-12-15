@@ -20,7 +20,7 @@ node {
     stage('Test') {
         sh 'npm run test:nowatch'
         sh 'npm run startserver & npm run apitest:nowatch && npm run loadtest:nowatch'
-        junit 'jasmine-reports/*    .xml'
+        junit 'jasmine-reports/*.xml'
     }
     stage('Deploy') {
         sh './dockerbuild.sh'
