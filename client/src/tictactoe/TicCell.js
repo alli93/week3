@@ -31,7 +31,7 @@ export default function (injected) {
                     gameId:this.props.gameId,
                     move:{
                         xy:coordinates,
-                        side:this.props.mySide
+                        side:"x"
                     }
                 });
             }

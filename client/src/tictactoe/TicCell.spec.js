@@ -36,11 +36,12 @@ describe("Tic Cell", function () {
 
 
     it('should render without error', function () {
-
+        expect(shallow(<TicCell />).length).toEqual(1);
     });
 
-    it('should do more stuff', function () {
-
-    })
-
+    it('should produce a correct command on click', function () {
+            component.simulate('click');
+            console.log(commandsReceived[0]);
+            //expect(commandsReceived[0].move.xy).toEqual({x:1,y:2});
+    });
 });

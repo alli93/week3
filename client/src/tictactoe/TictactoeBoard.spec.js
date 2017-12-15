@@ -23,8 +23,8 @@ describe("Tictactoe board", function () {
     });
 
     it('should render without error', function () {
-    });
-
+        expect(shallow(<TictactoeBoard />).length).toEqual(1);
+    });    
     it('should render 9 cells',function(){
         expect(component.find(TicCell).length).toBe(9);
     });
@@ -32,7 +32,6 @@ describe("Tictactoe board", function () {
     it('should pass coordinates to cell one', function(){
         expect(JSON.stringify(component.find(TicCell).nodes[0].props.coordinates)).toBe(JSON.stringify({x:0, y:0}));
     });
-
 
     it('should pass coordinates to cell three', function(){
         expect(JSON.stringify(component.find(TicCell).nodes[2].props.coordinates)).toBe(JSON.stringify({x:2, y:0}));
