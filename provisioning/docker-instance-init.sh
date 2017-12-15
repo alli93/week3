@@ -14,5 +14,7 @@ sudo usermod -a -G docker ec2-user
 
 DD_API_KEY=7cd9fb6b0f70ee5cbc976e57e64848b3 bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/install_agent.sh)"
 
+usermod -a -G docker dd-agent
+
 touch ec2-init-done.markerfile
 
