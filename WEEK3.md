@@ -15,8 +15,9 @@
   * [x] The API and Load test run in my build pipeline on Jenkins and everything is cleaned up afterwards
   * [x] My test reports are published in Jenkins
   * [x] My Tic Tac Toe game works, two people can play a game till the end and be notified who won.
-    * Notifying the winning player is yet to be implemented.
   * [x] My TicCell is tested
+    * Yes. I would like to add that I implemented a basic test for the Chat as well, without there being
+    any framework for it.
   * [x] I've set up Datadog
 	* I did not manage to fulfill one of the final requirements for datadog. The rest of the requirements
 	were fulfilled.
