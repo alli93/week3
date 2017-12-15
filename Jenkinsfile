@@ -19,7 +19,7 @@ node {
     }
     stage('Test') {
         sh 'npm run test:nowatch'
-        sh 'npm run startserver & npm run apitest:nowatch && npm run loadtest:nowatch && sleep 5 && kill #!'
+        sh 'npm run startserver & npm run apitest:nowatch && npm run loadtest:nowatch && sleep 5 && kill $!'
         junit 'jasmine-reports/*.xml'
     }
     stage('Deploy') {
